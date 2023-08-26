@@ -1,0 +1,79 @@
+body{
+    background-image: url(bg.png);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+#example-id{
+    color: aliceblue;
+    font-size: 50px;
+}
+.example-class {
+  color: black;
+}
+
+.container{
+ width: 100%;
+
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+}
+
+.Id{
+margin-left: 210px;
+height: 500px;
+width: 500px;
+background-color: gray;
+}
+.button{
+padding-top: 100px;
+}
+
+h1{
+text-align: center;
+font-size: 100px;
+}
+
+img{
+margin-top: 10px;
+height: 400px;
+width: 400px;
+
+}
+
+.Class{
+height: 500px;
+width: 500px;
+background-color: grey;
+
+}
+
+.tag{
+margin-left: 210px;
+height: 500px;
+width: 500px;
+background-color: grey;
+}
+.tag h3{
+margin-top: 30px;
+}
+
+.link{
+height: 500px;
+width: 500px;
+background-color: grey;
+}
+
+.Id-el{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 200px;
+}
+#id-button{
+margin: 100px;
+}
+#link-button{
+    margin-top: 250px;
+}

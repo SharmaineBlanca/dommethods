@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DOM Method</title>
+</head>
+<body><center>
+    <h1>DOM Methods Example</h1>
+  <div class="container">
+    <div class="Id">
+        <div class="Id-el">
+            
+             <div id="example-id">&nbsp; Kira &nbsp;</div>
+        </div>
+        <div class="button">
+            <button id="id-button">Toggle Background Color</button>
+        </div>
+        
+    </div>
+        <div class="Class">
+                <img class="example-class" src="img1.png" alt="Example Image 1">
+                <p class="example-class">DEATH NOTE</p>
+            <button class="class-button">Toggle Border</button>
+    </div>
+    
+    <div class="tag"><br><br><br><br><br><br><br>
+        <div>Death Note Characters</div><br>
+            <button id="selector-button">Toggle Border</button>
+            <h3>Light Yagami</h3>
+                <h3>L Lawliet</h3>
+                    <h3>Misa Amane</h3>
+                        <button id="tag-button">Change Heading Color</button>
+    </div>
+    <div class="link">
+            <button id="link-button">Generate YouTube Link</button>
+        <p id="youtube-link"></p>
+    </div>
+
+
+  </div></center>
+<script>
+  // Get Element by ID
+  const elementById = document.getElementById('example-id');
+  const idButton = document.getElementById('id-button');
+  idButton.addEventListener('click', function() {
+    elementById.style.backgroundColor = elementById.style.backgroundColor === 'black' ? '' : 'black';
+  });
+
+  // Get Elements by Classname
+  const elementsByClass = document.getElementsByClassName('example-class');
+  const classButtons = document.querySelectorAll('.class-button');
+  classButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      for (let i = 0; i < elementsByClass.length; i++) {
+        elementsByClass[i].style.border = elementsByClass[i].style.border ? '' : '2px solid white';
+      }
+    });
+  });
+  // Get Headings by Tag
+  const headingsByTag = document.getElementsByTagName('h3');
+  const tagButton = document.getElementById('tag-button');
+  let tagColorChanged = false;
+  tagButton.addEventListener('click', function() {
+    const newColor = tagColorChanged ? 'red' : 'green';
+    for (let i = 0; i < headingsByTag.length; i++) {
+      headingsByTag[i].style.color = newColor;
+    }
+    tagColorChanged = !tagColorChanged;
+  });
+  // Get Element by Selector
+  const elementBySelector = document.querySelector('div');
+  const selectorButton = document.getElementById('selector-button');
+  selectorButton.addEventListener('click', function() {
+    elementBySelector.style.border = elementBySelector.style.border ? '' : '2px groove red';
+  });
+  // Generate YouTube Link
+  const generateLinkButton = document.getElementById('link-button');
+  generateLinkButton.addEventListener('click', function() {
+    const youtubeLink = 'https://www.youtube.com/watch?v=kNyR46eHDxE';
+    const youtubeLinkParagraph = document.getElementById('youtube-link');
+    youtubeLinkParagraph.innerHTML = '<a href="' + youtubeLink + '" target="_blank">Visit YouTube</a>';
+  });
+</script>
+</body>
+</html>
